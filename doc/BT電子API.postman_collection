@@ -1,0 +1,238 @@
+{
+	"info": {
+		"_postman_id": "25deb652-a168-44fa-b81b-c25b5eb3be24",
+		"name": "接案 BT電子",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6085286"
+	},
+	"item": [
+		{
+			"name": "checkBalance",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://tai-backend-outer-api.ikali.com.tw/api/bt_game/checkBalance",
+					"protocol": "https",
+					"host": [
+						"tai-backend-outer-api",
+						"ikali",
+						"com",
+						"tw"
+					],
+					"path": [
+						"api",
+						"bt_game",
+						"checkBalance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loginGame",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://tai-backend-outer-api.ikali.com.tw/api/bt_game/loginGame",
+					"protocol": "https",
+					"host": [
+						"tai-backend-outer-api",
+						"ikali",
+						"com",
+						"tw"
+					],
+					"path": [
+						"api",
+						"bt_game",
+						"loginGame"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deposit",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "amount",
+							"value": "100",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://tai-backend-outer-api.ikali.com.tw/api/bt_game/deposit",
+					"protocol": "https",
+					"host": [
+						"tai-backend-outer-api",
+						"ikali",
+						"com",
+						"tw"
+					],
+					"path": [
+						"api",
+						"bt_game",
+						"deposit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "withdraw",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "https://tai-backend-outer-api.ikali.com.tw/api/bt_game/withdraw",
+					"protocol": "https",
+					"host": [
+						"tai-backend-outer-api",
+						"ikali",
+						"com",
+						"tw"
+					],
+					"path": [
+						"api",
+						"bt_game",
+						"withdraw"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "admin",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logoutIngameUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://tai-backend-outer-api.ikali.com.tw/api/bt_game/logoutIngameUser",
+					"protocol": "https",
+					"host": [
+						"tai-backend-outer-api",
+						"ikali",
+						"com",
+						"tw"
+					],
+					"path": [
+						"api",
+						"bt_game",
+						"logoutIngameUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logoutUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "account",
+							"value": "Vi5f",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://tai-backend-outer-api.ikali.com.tw/api/bt_game/logoutUser",
+					"protocol": "https",
+					"host": [
+						"tai-backend-outer-api",
+						"ikali",
+						"com",
+						"tw"
+					],
+					"path": [
+						"api",
+						"bt_game",
+						"logoutUser"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

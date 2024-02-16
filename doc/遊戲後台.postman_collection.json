@@ -1,0 +1,3403 @@
+{
+	"info": {
+		"_postman_id": "e5aa562d-c1bf-423c-8c8d-2855a136549e",
+		"name": "遊戲後台",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4584740"
+	},
+	"item": [
+		{
+			"name": "登入",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"account\":\"admin\",\r\n    \"password\":\"ab523868\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/admin/login",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"admin",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "登出",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/logout",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "左側選單列表",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/menu",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"menu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "修改密碼",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"new_password\":\"123456\",\r\n    \"confirm_password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/change_password",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"change_password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "新增幣種",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"nm\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/coin",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"coin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "幣種列表",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"coin_name\":\"USD\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/coin",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"coin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "商業模式列表",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"fi4q\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/commercial",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"commercial"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "刪除幣種",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/coin/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"coin",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "新增公司",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"account\":\"rmfC\",\r\n    \"password\":\"aa1234\",\r\n    \"name\":\"永成\",\r\n    \"desc\":\"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/company",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"company"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "公司列表",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/admin/company?page=1&per_page=10&account=1I0k",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"admin",
+						"company"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "per_page",
+							"value": "10"
+						},
+						{
+							"key": "account",
+							"value": "1I0k"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "編輯公司",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/company/1/edit",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"company",
+						"1",
+						"edit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "更新公司",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"dd\",\r\n    \"password\":\"\",\r\n    \"desc\":\"edervnerklvn\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/company/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"company",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "公司佔成設置",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"occupy_percent\":0.1,\r\n    \"occupy_desc\":\"cdvrvr\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/company/1/occupy",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"company",
+						"1",
+						"occupy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "公司退水設置",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"water_occupy\":20,\r\n    \"water_percent\":0.03,\r\n    \"water_desc\":\"dcmdklcvm\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/company/1/water",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"company",
+						"1",
+						"water"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "玩家餘額日誌",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "公司額度設置",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"balance\":20000000,\r\n    \"balance_desc\":\"fwf\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/company/1/balance",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"company",
+						"1",
+						"balance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "公司額度列表",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/company_balancelog?page=1&per_page=10&parent_account=Q5Nm&account=egp9",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"company_balancelog"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "per_page",
+							"value": "10"
+						},
+						{
+							"key": "starttime",
+							"value": "2022-12-22 01:31:31",
+							"disabled": true
+						},
+						{
+							"key": "endtime",
+							"value": "2023-12-22 01:31:31",
+							"disabled": true
+						},
+						{
+							"key": "parent_account",
+							"value": "Q5Nm"
+						},
+						{
+							"key": "account",
+							"value": "egp9"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "站長上層帳號",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/station/up_level_account",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"station",
+						"up_level_account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "站長列表",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/station?page=1&per_page=10",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"station"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "per_page",
+							"value": "10"
+						},
+						{
+							"key": "account",
+							"value": "sMKX",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "新增站長",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"company_id\":\"1\",\"account\":\"TestSta31\",\"password\":\"aa1234\",\"confirm_password\":\"aa1234\",\"name\":\"dwfw\",\"coin_type\":\"1\",\"commercial_mode\":\"1\",\"desc\":\"wrwr\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/station",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"station"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "編輯站長",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/station/8/edit",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"station",
+						"8",
+						"edit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "更新站長",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"password\":\"123456\",\r\n    \"confirm_password\":\"123456\",\r\n    \"name\":\"mklmlk\",\r\n    \"desc\":\"dcd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/station/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"station",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "站長佔成設置",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"occupy_percent\":20,\r\n    \"occupy_desc\":\"cdvrvr\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/station/1/occupy",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"station",
+						"1",
+						"occupy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "站長退水設置",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"water_occupy\":20,\r\n    \"water_percent\":20,\r\n    \"water_desc\":\"dcmdklcvm\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/station/1/water",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"station",
+						"1",
+						"water"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "站長額度設置",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"balance\":-200,\r\n    \"balance_desc\":\"nkjnhk\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/station/2/balance",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"station",
+						"2",
+						"balance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "站長額度列表",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/station_balancelog?page=1&per_page=10&starttime=2022-12-22 01:31:31&endtime=2023-12-22 01:31:31&parent_account=Q5Nm&account=egp9",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"station_balancelog"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "per_page",
+							"value": "10"
+						},
+						{
+							"key": "starttime",
+							"value": "2022-12-22 01:31:31"
+						},
+						{
+							"key": "endtime",
+							"value": "2023-12-22 01:31:31"
+						},
+						{
+							"key": "parent_account",
+							"value": "Q5Nm"
+						},
+						{
+							"key": "account",
+							"value": "egp9"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "代理上層帳號",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/agent/up_level_account",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"agent",
+						"up_level_account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "代理列表",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/agent?page=1&per_page=10&account=rJmg",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"agent"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "per_page",
+							"value": "10"
+						},
+						{
+							"key": "account",
+							"value": "rJmg"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "新增代理",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"station_id\":2,\r\n    \"account\":\"vdvdv\",\r\n    \"password\":\"aa1234\",\r\n    \"confirm_password\":\"aa1234\",\r\n    \"name\":\"永興\",\r\n    \"desc\":\"fefefe\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/agent",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"agent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "編輯代理",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"company_id\":1,\r\n    \"account\":\"12defe\",\r\n    \"password\":\"123456\",\r\n    \"confirm_password\":\"123456\",\r\n    \"name\":\"bnm\",\r\n    \"coin_type\":1,\r\n    \"commercial_mode\":1,\r\n    \"desc\":\"fefefe\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/agent/3/edit",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"agent",
+						"3",
+						"edit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "更新代理",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\":\"Observer907\",\r\n    \"confirm_password\":\"Observer907\",\r\n    \"name\":\"mklmlk\",\r\n    \"desc\":\"dcd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/agent/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"agent",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "代理佔成設置",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"occupy_percent\":50,\r\n    \"occupy_desc\":\"cdvrvr\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/agent/3/occupy",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"agent",
+						"3",
+						"occupy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "代理額度設置",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"balance\":-200,\r\n    \"balance_desc\":\"xxxx\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/agent/3/balance",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"agent",
+						"3",
+						"balance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "代理退水設置",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"water_occupy\":30,\r\n    \"water_percent\":20,\r\n    \"water_desc\":\"dcmdklcvm\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/agent/3/water",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"agent",
+						"3",
+						"water"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "代理額度列表",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/agent_balancelog?page=1&per_page=10&starttime=2022-12-22 01:31:31&endtime=2023-12-22 01:31:31&parent_account=Q5Nm&account=egp9",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"agent_balancelog"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "per_page",
+							"value": "10"
+						},
+						{
+							"key": "starttime",
+							"value": "2022-12-22 01:31:31"
+						},
+						{
+							"key": "endtime",
+							"value": "2023-12-22 01:31:31"
+						},
+						{
+							"key": "parent_account",
+							"value": "Q5Nm"
+						},
+						{
+							"key": "account",
+							"value": "egp9"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "會員上級帳號",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/member/up_level_account",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"member",
+						"up_level_account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "新增會員",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"agent_id\":\"3\",\n    \"account\":\"player008\",\n    \"phone\":\"0919089089\",\n    \"balance\":\"\",\n    \"name\":\"jkl\",\n    \"freeze_status\":\"0\",\n    \"slot_open\":\"1\",\n    \"lottery_open\":\"1\",\n        \"bt_open\":\"1\",\n\n    \"has_test_account\":\"0\",\n    \"balance_desc\":\"\",\n    \"desc\":\"ewew\",\n    \"password\":\"aa1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/member",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"member"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "會員列表",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/member?page=1&per_page=10",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"member"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "per_page",
+							"value": "10"
+						},
+						{
+							"key": "account",
+							"value": "KOb6",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "玩家餘額日誌",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/admin/member_playerlog?account=&starttime=&endtime=",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"admin",
+						"member_playerlog"
+					],
+					"query": [
+						{
+							"key": "account",
+							"value": ""
+						},
+						{
+							"key": "starttime",
+							"value": ""
+						},
+						{
+							"key": "endtime",
+							"value": ""
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "編輯會員",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/member/12/edit",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"member",
+						"12",
+						"edit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "更新會員",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"nknkj\",\r\n    \"phone\":\"0938901002\",\r\n    \"freeze_status\":1,\r\n    \"has_test_account\":1,\r\n    \"password\":\"aa12345\",\r\n    \"games\": [\r\n            {\r\n                \"id\": 1,\r\n                \"game_type\": 1,\r\n                \"game_name\": \"電子機台\",\r\n                \"member_id\": 12,\r\n                \"open\": 1,\r\n                \"created_at\": \"2022-10-13T10:35:25.000000Z\",\r\n                \"updated_at\": \"2022-10-13T10:35:25.000000Z\"\r\n            },\r\n            {\r\n                \"id\": 2,\r\n                \"game_type\": 2,\r\n                \"game_name\": \"彩票\",\r\n                \"member_id\": 12,\r\n                \"open\": 1,\r\n                \"created_at\": \"2022-10-13T10:35:25.000000Z\",\r\n                \"updated_at\": \"2022-10-13T10:35:25.000000Z\"\r\n            },\r\n            {\r\n                \"id\": 35,\r\n                \"game_type\": 3,\r\n                \"game_name\": \"bt\",\r\n                \"member_id\": 12,\r\n                \"open\": 0,\r\n                \"created_at\": \"2023-04-18 12:42\",\r\n                \"updated_at\": \"2023-04-18 12:42\"\r\n            }\r\n        ],\r\n    \"desc\":\"cdvvd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/member/12",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"member",
+						"12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "編輯會員額度設置",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/member/1/balance_edit",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"member",
+						"1",
+						"balance_edit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "更新會員額度設置",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"balance\":\"-100\",\"desc\":\"xxxxxxx\",\"id\":1,\"balance_limit\":1000}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/member/1/balance_update",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"member",
+						"1",
+						"balance_update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "會員額度列表",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/member_balancelog?page=1&per_page=10&starttime=2022-12-22 01:31:31&endtime=2023-12-22 01:31:31&parent_account=egp9&account=yatai",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"member_balancelog"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "per_page",
+							"value": "10"
+						},
+						{
+							"key": "starttime",
+							"value": "2022-12-22 01:31:31"
+						},
+						{
+							"key": "endtime",
+							"value": "2023-12-22 01:31:31"
+						},
+						{
+							"key": "parent_account",
+							"value": "egp9"
+						},
+						{
+							"key": "account",
+							"value": "yatai"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "遊戲報表 公司",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/admin/settle/company?page=1&per_page=20&starttime=2023-04-01 00:00:00&endtime=2023-04-22 12:08:08",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"admin",
+						"settle",
+						"company"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "per_page",
+							"value": "20"
+						},
+						{
+							"key": "starttime",
+							"value": "2023-04-01 00:00:00"
+						},
+						{
+							"key": "endtime",
+							"value": "2023-04-22 12:08:08"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "遊戲報表 站長",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/admin/settle/station?page=1&uplevel_id=1&starttime=2023-04-01 00:00:02&endtime=2023-05-01 14:28:02&per_page=10",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"admin",
+						"settle",
+						"station"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "uplevel_id",
+							"value": "1"
+						},
+						{
+							"key": "starttime",
+							"value": "2023-04-01 00:00:02"
+						},
+						{
+							"key": "endtime",
+							"value": "2023-05-01 14:28:02"
+						},
+						{
+							"key": "per_page",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "遊戲報表 代理",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/settle/agent?page=1&uplevel_id=2&per_page=10&starttime=2022-01-01 14:28:02&endtime=2024-12-17 14:28:02",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"settle",
+						"agent"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "uplevel_id",
+							"value": "2"
+						},
+						{
+							"key": "per_page",
+							"value": "10"
+						},
+						{
+							"key": "starttime",
+							"value": "2022-01-01 14:28:02"
+						},
+						{
+							"key": "endtime",
+							"value": "2024-12-17 14:28:02"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "遊戲報表 會員",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/admin/settle/member?page=1&per_page=10",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"admin",
+						"settle",
+						"member"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "uplevel_id",
+							"value": "5",
+							"disabled": true
+						},
+						{
+							"key": "per_page",
+							"value": "10"
+						},
+						{
+							"key": "starttime",
+							"value": "2022-11-01 14:28:02",
+							"disabled": true
+						},
+						{
+							"key": "endtime",
+							"value": "2022-11-17 14:28:02",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "電子遊戲投注紀錄",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/admin/bet_records/slot?page=1&per_page=20&account=eU5u",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"admin",
+						"bet_records",
+						"slot"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "per_page",
+							"value": "20"
+						},
+						{
+							"key": "account",
+							"value": "eU5u"
+						},
+						{
+							"key": "starttime",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "endtime",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BT電子遊戲投注紀錄",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/admin/bt_game/bet_records?page=1&per_page=20&account=eU5u",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"admin",
+						"bt_game",
+						"bet_records"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "per_page",
+							"value": "20"
+						},
+						{
+							"key": "account",
+							"value": "eU5u"
+						},
+						{
+							"key": "starttime",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "endtime",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "彩票遊戲投注紀錄",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/bet_records/lottery?page=1&per_page=10&account=eU5u",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"bet_records",
+						"lottery"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "per_page",
+							"value": "10"
+						},
+						{
+							"key": "account",
+							"value": "eU5u"
+						},
+						{
+							"key": "starttime",
+							"value": "2022-12-24 00:00:00",
+							"disabled": true
+						},
+						{
+							"key": "endtime",
+							"value": "2022-12-24 12:12:12",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "彩票取消注單",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\":48,\n    \"period\":20211585,\n    \"id\":5,\n    \"account\":\"1bS5\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/betrecord/lottery/cancel",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"betrecord",
+						"lottery",
+						"cancel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "電子機台取消注單",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\":\"SLOT\",\n    \"id\":1,\n    \"account\":\"eU5u\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/betrecord/slot/cancel",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"betrecord",
+						"slot",
+						"cancel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "新增電子機台",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"video_address\":\"crcrvemvlke4nvlk\",\r\n    \"link_address\":\"rvr4vn4jk\",\r\n    \"open\":true,\r\n    \"machine_name\":\"JKL\",\r\n    \"machine_model\":\"JKS-001\",\r\n    \"image\":\"xxxxxxxx\",\r\n    \"coin_name\":\"KOREA_COIN\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/machine",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"machine"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "刪除電子機台",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"video_address\":\"crcrvemvlke4nvlk\",\r\n    \"link_address\":\"rvr4vn4jk\",\r\n    \"open\":true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/machine/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"machine",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "編輯電子機台",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"video_address\":\"crcrvemvlke4nvlk\",\r\n    \"link_address\":\"rvr4vn4jk\",\r\n    \"open\":true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/admin/machine/2/edit",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"admin",
+						"machine",
+						"2",
+						"edit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "更新電子機台",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"video_address\":\"crcrvemvlke4nvlk\",\r\n    \"link_address\":\"rvr4vn4jk\",\r\n    \"open\":true,\r\n    \"image\":\"xxxxx:csva\",\r\n    \"machine_name\":\"xxxxxx\",\r\n    \"machine_model\":\"xxxxx\",\r\n    \"coin_name\":\"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/admin/machine/2",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"admin",
+						"machine",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "電子機台列表",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/machine?page=1&per_page=5",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"machine"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "per_page",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "通知更新",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"starttime\":\"2022-10-23 20:03\",\r\n    \"endtime\":\"2022-10-27 20:03\",\r\n    \"open\":true,\r\n    \"content\":\"Fuck you\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/notify",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"notify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "通知列表",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/notify",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"notify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "遊戲列表",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/game",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"game"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "上傳圖片",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "https://ag.elecslot.club/admin/uploadImage",
+					"protocol": "https",
+					"host": [
+						"ag",
+						"elecslot",
+						"club"
+					],
+					"path": [
+						"admin",
+						"uploadImage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "踢線",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"member_id\":1,\r\n    \"source\":\"slot\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/kickMember",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"kickMember"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "編輯會員活動管理",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/admin/member/coinevent/4/edit",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"admin",
+						"member",
+						"coinevent",
+						"4",
+						"edit"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "更新會員活動管理",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"coin_name\":\"VIETNAM_COIN\",\r\n    \"member_id\":3,\r\n    \"coin_daily\":500,\r\n    \"stop\":true,\r\n    \"coin\":0\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/member/coinevent/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"member",
+						"coinevent",
+						"3"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "開獎結果",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/admin/lottery/result?page=1&per_page=10&type=48",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"admin",
+						"lottery",
+						"result"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "per_page",
+							"value": "10"
+						},
+						{
+							"key": "period",
+							"value": "2915788",
+							"disabled": true
+						},
+						{
+							"key": "type",
+							"value": "48"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "開獎結果 批量更新",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"period\": \"1123446\",\n        \"numbers\": \"1,3,32,22,34,18\",\n        \"type\": 48,\n        \"open_time\": \"2022-12-24 12:12:13\",\n        \"created_at\": null,\n        \"updated_at\": null\n    },\n    {\n        \"period\": \"1123466\",\n        \"numbers\": \"1,3,32,22,34,17\",\n        \"type\": 48,\n        \"open_time\": \"2022-12-24 12:12:12\",\n        \"created_at\": null,\n        \"updated_at\": null\n    },\n    {\n        \"period\": \"1123486\",\n        \"numbers\": \"1,3,32,22,34,17\",\n        \"type\": 48,\n        \"open_time\": \"2022-12-24 12:12:12\",\n        \"created_at\": null,\n        \"updated_at\": null\n    }\n\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/lottery/result/batch",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"lottery",
+						"result",
+						"batch"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "period",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "重新計算",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/admin/lottery/caculate",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"admin",
+						"lottery",
+						"caculate"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "彩票列表",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"coin_name\":\"VIETNAM_COIN\",\r\n    \"member_id\":3,\r\n    \"coin_daily\":500,\r\n    \"stop\":true,\r\n    \"coin\":0\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/lottery?page=1&per_page=10&filter=48",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"lottery"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "per_page",
+							"value": "10"
+						},
+						{
+							"key": "filter",
+							"value": "48"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "彩票 參數設置編輯",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/lottery/48/edit",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"lottery",
+						"48",
+						"edit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "彩票 參數設置更新",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"open\":false,\n    \"bet_time\":1234,\n    \"lottery_name\":\"dfrv\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/lottery/48",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"lottery",
+						"48"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "限紅賠率列表",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://backend-api.elecslot.club/admin/stake?type=48",
+					"protocol": "http",
+					"host": [
+						"backend-api",
+						"elecslot",
+						"club"
+					],
+					"path": [
+						"admin",
+						"stake"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "48"
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "限紅賠率批量更新",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"postion\": [\r\n            {\r\n                \"id\": 1,\r\n                \"type\": 48,\r\n                \"stake_id\": 1,\r\n                \"red_limit\": 111,\r\n                \"odds\": \"2.43\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null,\r\n                \"stake_name\": \"上\"\r\n            },\r\n            {\r\n                \"id\": 2,\r\n                \"type\": 48,\r\n                \"stake_id\": 2,\r\n                \"red_limit\": 1000,\r\n                \"odds\": \"4.77\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null,\r\n                \"stake_name\": \"中\"\r\n            },\r\n            {\r\n                \"id\": 3,\r\n                \"type\": 48,\r\n                \"stake_id\": 3,\r\n                \"red_limit\": 1000,\r\n                \"odds\": \"2.43\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null,\r\n                \"stake_name\": \"下\"\r\n            },\r\n            {\r\n                \"id\": 4,\r\n                \"type\": 48,\r\n                \"stake_id\": 4,\r\n                \"red_limit\": 1000,\r\n                \"odds\": \"2.43\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null,\r\n                \"stake_name\": \"奇\"\r\n            },\r\n            {\r\n                \"id\": 5,\r\n                \"type\": 48,\r\n                \"stake_id\": 5,\r\n                \"red_limit\": 1000,\r\n                \"odds\": \"4.77\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null,\r\n                \"stake_name\": \"和\"\r\n            },\r\n            {\r\n                \"id\": 6,\r\n                \"type\": 48,\r\n                \"stake_id\": 6,\r\n                \"red_limit\": 1000,\r\n                \"odds\": \"2.43\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null,\r\n                \"stake_name\": \"偶\"\r\n            },\r\n            {\r\n                \"id\": 7,\r\n                \"type\": 48,\r\n                \"stake_id\": 7,\r\n                \"red_limit\": 1000,\r\n                \"odds\": \"2.43\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null,\r\n                \"stake_name\": \"大\"\r\n            },\r\n            {\r\n                \"id\": 8,\r\n                \"type\": 48,\r\n                \"stake_id\": 8,\r\n                \"red_limit\": 1000,\r\n                \"odds\": \"1.98\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null,\r\n                \"stake_name\": \"小\"\r\n            },\r\n            {\r\n                \"id\": 9,\r\n                \"type\": 48,\r\n                \"stake_id\": 9,\r\n                \"red_limit\": 1000,\r\n                \"odds\": \"1.98\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null,\r\n                \"stake_name\": \"單\"\r\n            },\r\n            {\r\n                \"id\": 10,\r\n                \"type\": 48,\r\n                \"stake_id\": 10,\r\n                \"red_limit\": 1000,\r\n                \"odds\": \"1.98\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null,\r\n                \"stake_name\": \"雙\"\r\n            },\r\n            {\r\n                \"id\": 11,\r\n                \"type\": 48,\r\n                \"stake_id\": 11,\r\n                \"red_limit\": 1000,\r\n                \"odds\": \"3.8\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null,\r\n                \"stake_name\": \"大單\"\r\n            },\r\n            {\r\n                \"id\": 12,\r\n                \"type\": 48,\r\n                \"stake_id\": 12,\r\n                \"red_limit\": 1000,\r\n                \"odds\": \"3.8\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null,\r\n                \"stake_name\": \"小單\"\r\n            },\r\n            {\r\n                \"id\": 13,\r\n                \"type\": 48,\r\n                \"stake_id\": 13,\r\n                \"red_limit\": 1000,\r\n                \"odds\": \"3.8\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null,\r\n                \"stake_name\": \"大雙\"\r\n            },\r\n            {\r\n                \"id\": 14,\r\n                \"type\": 48,\r\n                \"stake_id\": 14,\r\n                \"red_limit\": 1000,\r\n                \"odds\": \"3.8\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null,\r\n                \"stake_name\": \"小雙\"\r\n            },\r\n            {\r\n                \"id\": 15,\r\n                \"type\": 48,\r\n                \"stake_id\": 15,\r\n                \"red_limit\": 1000,\r\n                \"odds\": \"1.98\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null,\r\n                \"stake_name\": \"指數-大\"\r\n            },\r\n            {\r\n                \"id\": 16,\r\n                \"type\": 48,\r\n                \"stake_id\": 16,\r\n                \"red_limit\": 1000,\r\n                \"odds\": \"1.98\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null,\r\n                \"stake_name\": \"指數-小\"\r\n            }\r\n        ],\r\n        \"option\": [\r\n            {\r\n                \"id\": 1,\r\n                \"type\": 48,\r\n                \"option\": 1,\r\n                \"red_limit\": 999,\r\n                \"created_at\": null,\r\n                \"updated_at\": null\r\n            },\r\n            {\r\n                \"id\": 2,\r\n                \"type\": 48,\r\n                \"option\": 2,\r\n                \"red_limit\": 1000,\r\n                \"created_at\": null,\r\n                \"updated_at\": null\r\n            },\r\n            {\r\n                \"id\": 3,\r\n                \"type\": 48,\r\n                \"option\": 3,\r\n                \"red_limit\": 1000,\r\n                \"created_at\": null,\r\n                \"updated_at\": null\r\n            },\r\n            {\r\n                \"id\": 4,\r\n                \"type\": 48,\r\n                \"option\": 4,\r\n                \"red_limit\": 1000,\r\n                \"created_at\": null,\r\n                \"updated_at\": null\r\n            },\r\n            {\r\n                \"id\": 5,\r\n                \"type\": 48,\r\n                \"option\": 5,\r\n                \"red_limit\": 1000,\r\n                \"created_at\": null,\r\n                \"updated_at\": null\r\n            }\r\n        ],\r\n        \"zhung\": [\r\n            {\r\n                \"id\": 1,\r\n                \"type\": 48,\r\n                \"zhung\": 1,\r\n                \"option\": 1,\r\n                \"odds\": \"2.5\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null\r\n            },\r\n            {\r\n                \"id\": 2,\r\n                \"type\": 48,\r\n                \"zhung\": 1,\r\n                \"option\": 2,\r\n                \"odds\": \"2\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null\r\n            },\r\n            {\r\n                \"id\": 3,\r\n                \"type\": 48,\r\n                \"zhung\": 1,\r\n                \"option\": 3,\r\n                \"odds\": \"2\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null\r\n            },\r\n            {\r\n                \"id\": 4,\r\n                \"type\": 48,\r\n                \"zhung\": 1,\r\n                \"option\": 4,\r\n                \"odds\": \"2\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null\r\n            },\r\n            {\r\n                \"id\": 5,\r\n                \"type\": 48,\r\n                \"zhung\": 1,\r\n                \"option\": 5,\r\n                \"odds\": \"2\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null\r\n            },\r\n            {\r\n                \"id\": 6,\r\n                \"type\": 48,\r\n                \"zhung\": 2,\r\n                \"option\": 1,\r\n                \"odds\": \"2\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null\r\n            },\r\n            {\r\n                \"id\": 7,\r\n                \"type\": 48,\r\n                \"zhung\": 2,\r\n                \"option\": 2,\r\n                \"odds\": \"2\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null\r\n            },\r\n            {\r\n                \"id\": 8,\r\n                \"type\": 48,\r\n                \"zhung\": 2,\r\n                \"option\": 3,\r\n                \"odds\": \"2\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null\r\n            },\r\n            {\r\n                \"id\": 9,\r\n                \"type\": 48,\r\n                \"zhung\": 2,\r\n                \"option\": 4,\r\n                \"odds\": \"2\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null\r\n            },\r\n            {\r\n                \"id\": 10,\r\n                \"type\": 48,\r\n                \"zhung\": 2,\r\n                \"option\": 5,\r\n                \"odds\": \"2\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null\r\n            },\r\n            {\r\n                \"id\": 11,\r\n                \"type\": 48,\r\n                \"zhung\": 3,\r\n                \"option\": 1,\r\n                \"odds\": \"2\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null\r\n            },\r\n            {\r\n                \"id\": 12,\r\n                \"type\": 48,\r\n                \"zhung\": 3,\r\n                \"option\": 2,\r\n                \"odds\": \"2\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null\r\n            },\r\n            {\r\n                \"id\": 13,\r\n                \"type\": 48,\r\n                \"zhung\": 3,\r\n                \"option\": 3,\r\n                \"odds\": \"2\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null\r\n            },\r\n            {\r\n                \"id\": 14,\r\n                \"type\": 48,\r\n                \"zhung\": 3,\r\n                \"option\": 4,\r\n                \"odds\": \"2\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null\r\n            },\r\n            {\r\n                \"id\": 15,\r\n                \"type\": 48,\r\n                \"zhung\": 3,\r\n                \"option\": 5,\r\n                \"odds\": \"2\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null\r\n            },\r\n            {\r\n                \"id\": 16,\r\n                \"type\": 48,\r\n                \"zhung\": 4,\r\n                \"option\": 1,\r\n                \"odds\": \"2\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null\r\n            },\r\n            {\r\n                \"id\": 17,\r\n                \"type\": 48,\r\n                \"zhung\": 4,\r\n                \"option\": 2,\r\n                \"odds\": \"2\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null\r\n            },\r\n            {\r\n                \"id\": 18,\r\n                \"type\": 48,\r\n                \"zhung\": 4,\r\n                \"option\": 3,\r\n                \"odds\": \"2\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null\r\n            },\r\n            {\r\n                \"id\": 19,\r\n                \"type\": 48,\r\n                \"zhung\": 4,\r\n                \"option\": 4,\r\n                \"odds\": \"2\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null\r\n            },\r\n            {\r\n                \"id\": 20,\r\n                \"type\": 48,\r\n                \"zhung\": 4,\r\n                \"option\": 5,\r\n                \"odds\": \"2\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null\r\n            },\r\n            {\r\n                \"id\": 21,\r\n                \"type\": 48,\r\n                \"zhung\": 5,\r\n                \"option\": 1,\r\n                \"odds\": \"2\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null\r\n            },\r\n            {\r\n                \"id\": 22,\r\n                \"type\": 48,\r\n                \"zhung\": 5,\r\n                \"option\": 2,\r\n                \"odds\": \"2\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null\r\n            },\r\n            {\r\n                \"id\": 23,\r\n                \"type\": 48,\r\n                \"zhung\": 5,\r\n                \"option\": 3,\r\n                \"odds\": \"2\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null\r\n            },\r\n            {\r\n                \"id\": 24,\r\n                \"type\": 48,\r\n                \"zhung\": 5,\r\n                \"option\": 4,\r\n                \"odds\": \"2\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null\r\n            },\r\n            {\r\n                \"id\": 25,\r\n                \"type\": 48,\r\n                \"zhung\": 5,\r\n                \"option\": 5,\r\n                \"odds\": \"2\",\r\n                \"created_at\": null,\r\n                \"updated_at\": null\r\n            }\r\n        ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/admin/stake",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"stake"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

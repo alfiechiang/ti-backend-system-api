@@ -1,0 +1,854 @@
+{
+	"info": {
+		"_postman_id": "c6a2f5dd-2588-4b1c-a1c8-b910f69e2ef3",
+		"name": "遊戲前台",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4584740"
+	},
+	"item": [
+		{
+			"name": "登入",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "source",
+						"value": "hall",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"account\":\"eU5u\",\n    \"password\":\"aa1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/api/login",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "修改密碼",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"new_password\":\"sss123\",\r\n    \"confirm_password\":\"sss123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/change_password",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"change_password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "登出",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/api/logout",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"api",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "電子機台",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/api/machine",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"api",
+						"machine"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "玩家電子機台",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/api/player/machine",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"api",
+						"player",
+						"machine"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "機台歷史注單",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"result\":\"-200\",\n    \"open_score\":\"1400\",\n    \"wash_score\":\"1200\",\n    \"open_score_time\":\"2022-11-25 03:19:25\",\n    \"account\":\"8KcS\",\n    \"wash_score_time\":\"2022-11-25 03:19:25\",\n    \"type\":\"BT\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/betrecord/slot",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"betrecord",
+						"slot"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "公告",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/notify",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"notify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "玩家餘額變化",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"category\":\"slot\",\r\n    \"account\":\"8KcS\",\r\n    \"balance\":1000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/player/balance",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"player",
+						"balance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "玩家個人資訊",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"category\":\"lottery\",\r\n    \"account\":\"8KcS\",\r\n    \"balance\":1000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/api/player/info",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"api",
+						"player",
+						"info"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				},
+				"description": "name: 會員暱稱\n\nphone:手機號\n\nbalance:餘額\n\nbalance_limit: 會員遊戲限額"
+			},
+			"response": []
+		},
+		{
+			"name": "玩家活動餘額變化",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"account\":\"lRfQ\",\r\n    \"coin_name\":\"VIETNAM_COIN\",\r\n    \"balance\":\"200\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/player/coinevent/balance",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"player",
+						"coinevent",
+						"balance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "彩票歷史注單下單",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"stake_name\":\"上\",\"account\":\"7E6u\",\"bet_time\":\"2023-4-19 13:04:27\",\"type\":48,\"period\":\"A2023099\",\"stake_id\":1,\"bet_money\":1,\"status\":0}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/api/betrecord/lottery",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"api",
+						"betrecord",
+						"lottery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "彩票歷史注單 批量下單",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n    \"account\":\"7E6u\",\n    \"bet_time\":\"2022-12-29 12:12:12\",\n    \"type\":48,\n    \"period\":345666,\n    \"stake_id\":1,\n    \"stake_name\":\"大單\",\n    \"odds\":4.9,\n    \"bet_money\":100.21,\n    \"status\":0,\n    \"result\":100\n},\n   {\n    \"account\":\"7E6u\",\n    \"bet_time\":\"2022-12-29 12:12:12\",\n    \"type\":48,\n    \"period\":345666,\n    \"stake_id\":1,\n    \"stake_name\":\"大單\",\n    \"odds\":4.9,\n    \"bet_money\":100.21,\n    \"status\":0,\n    \"result\":100\n}\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/betrecord/lottery_batch",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"betrecord",
+						"lottery_batch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "注區賠率限紅",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://backend-api.elecslot.club/api/lotteryodd?type=48",
+					"protocol": "http",
+					"host": [
+						"backend-api",
+						"elecslot",
+						"club"
+					],
+					"path": [
+						"api",
+						"lotteryodd"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "48"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "猜中選號賠率",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/lotteryodd/option?type=48",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"lotteryodd",
+						"option"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "48"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "歷史(彩種+期數)開獎號碼",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/lotterynumber?type=47",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"lotterynumber"
+					],
+					"query": [
+						{
+							"key": "starttime",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "endtime",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "type",
+							"value": "47"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "資金明細",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/player/balancelog?page=1&per_page=10&account=8KcS",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"player",
+						"balancelog"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "per_page",
+							"value": "10"
+						},
+						{
+							"key": "account",
+							"value": "8KcS"
+						},
+						{
+							"key": "starttime",
+							"value": "2022-11-28 14:09:38",
+							"disabled": true
+						},
+						{
+							"key": "endtime",
+							"value": "2023-11-28 14:09:38",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "彩票歷史注單",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/api/betrecord/lottery?type=47",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"api",
+						"betrecord",
+						"lottery"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "47"
+						},
+						{
+							"key": "starttime",
+							"value": "2022-12-23 12:12:12",
+							"disabled": true
+						},
+						{
+							"key": "endtime",
+							"value": "2022-12-25 12:12:12",
+							"disabled": true
+						},
+						{
+							"key": "status",
+							"value": "0",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "單一彩票資訊",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/lottery/48",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"lottery",
+						"48"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "2022-12-23 12:12:12",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "2022-12-25 12:12:12",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "彩票列表",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/api/lottery",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"api",
+						"lottery"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "測試",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/test",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "計算該彩種當局輸贏結果",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\":\"35\",\n    \"period\":\"A2986719\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/api/lottery/result",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"api",
+						"lottery",
+						"result"
+					]
+				},
+				"description": "Paremeters:\n\nperiod(期號)\n\ntype(彩票ID)"
+			},
+			"response": []
+		}
+	]
+}
